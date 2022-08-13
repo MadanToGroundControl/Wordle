@@ -126,3 +126,12 @@ span {
     }
 
 }
+
+@media only screen and (max-width: 600px) {
+    .keyboard-row {
+        width: 300px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+  }
