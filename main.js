@@ -13,7 +13,7 @@ var listaPalavra = ["sagaz","amago","negro","exito","mexer","termo","nobre","sen
 "pudor","regra","dogma","louco","criar","banal","round","impor","saude","jeito","atras","ordem","tenro","pifio","desse","apraz","pedir",
 "merce","reaca","clava","usura","prosa","feliz","juizo","servo","viril","sabio","coisa","manso","ontem","presa","falar","cunho","forma",
 "devir","mesmo","meiga","afago","fluir","ebrio","plato","vendo","limbo","serio","guisa","magoa","posso","visar","heroi","temer","acaso", 
-"pleno","puder","valor","cisma","bruma","lugar","impio","exodo","afins","obvio","certo","gerar","obter","crise","matiz","praxe","senil",
+"pleno","poder","valor","cisma","bruma","lugar","impio","exodo","afins","obvio","certo","gerar","obter","crise","matiz","praxe","senil",
 "havia","todos","venia","fluxo","enfim","abrir","tedio","ritmo","alibi","falso","uniao","tomar","garbo","visao","parvo","facil","valia",
 "reter","pulha","vital","favor","bravo","grato","prumo","vivaz","legal","parco","genio","laico","burro","olhar","possa","levar","ameno",
 "reles","tecer","casta","obito","prime","selar","morte","ranco","anelo","fator","sabia","rogar","noite","facam","citar","farsa","cabal",
@@ -39,7 +39,7 @@ var listaPalavra = ["sagaz","amago","negro","exito","mexer","termo","nobre","sen
 "sarca","longe","asilo","extra","igneo","judeu","curso","orfao","caber","drops","locus","porta","canon","besta","rouca","radio","desta",
 "ruina","video","zelar","combo","vosso","nosso","vinha","culpa","bioma","menos","ereto","finda","paira","bonus","agudo","feudo","facto",
 "advir","urgia","cutis","traco","meigo","surja","tetra","sitio","super","julia","facho","suave","autos","amena","rumor","tento","pilar",
-"turma","cocho","clean","museu","chama","louca","lasso","geral","mosto","lápis","local","hobby","optar","podio","boato","medir","rubro",
+"turma","cocho","clean","museu","chama","louca","lasso","geral","mosto","lapis","local","hobby","optar","podio","boato","medir","rubro",
 "pacto","crime","refem","folga","brabo","penta","pareo","letal","ponha","drama","poema","aluno","mesma","movel","cacho","feroz","vigia",
 "aroma","metie","hoste","chato","avida","cover","golpe","vetar","pasmo","monte","rival","teste","fazia","acude","piada","finjo","troca",
 "coral","ecoar","axila","forum","licao","daqui","forem","riste","verde","poeta","carta","monge","plebe","clima","artur","passa","lesse",
@@ -53,8 +53,8 @@ var listaPalavra = ["sagaz","amago","negro","exito","mexer","termo","nobre","sen
 "paiol","visto","bolsa","horto","close","proto","ruido","ileso","morfo","densa","xucro","pugna","inves","marca","jogar","podar","vista",
 "urdir","chula","ufano","penso","vasta","mocho","frota","civel","cheia","bulir","umido","piche","linha","esgar","peita","resto","apear",
 "tenha","santo","misto","fundo","volta","manto","cerca","narco","logos","nessa","natal","monta","velha","jazer","fazes","findo","campa",
-"ferpa","chaga","ardis","pólis","mover","letra","cosmo","etapa","retro","nesta","seiva","banto","matar","folia","coroa","venho","trago",
-"punha","ceita","final","sabor","barro","redor","louro","rente","calça","sigla","salva","firma","arroz","dança","queda","farol","torna",
+"ferpa","chaga","ardis","polis","mover","letra","cosmo","etapa","retro","nesta","seiva","banto","matar","folia","coroa","venho","trago",
+"punha","ceita","final","sabor","barro","redor","louro","rente","sigla","salva","firma","arroz","dança","queda","farol","torna",
 "coevo","folha","enjoo","lutar","solta","lousa","tumba","mimar","burra","baixa","neste","salmo","fugiu","ousar","todas","veloz","corar",
 "zumbi","calor","longo","reler","forro","justa","vazia","penca","cacto","calvo","gueto","bedel","farto","chave","logia","mania","lucro",
 "quite","repor","sugar","sexto","custo","subir","staff","ultra","urgir","passe","sadio","refil","viger","valer","versa","lento","louca",
@@ -67,7 +67,7 @@ var listaTentativa = []
 listaTentativa = listaTentativa.concat(listaPalavra);
 
 var palavra = listaPalavra[Math.floor(Math.random()*listaPalavra.length)].toUpperCase();
-//console.log("A resposta é " + palavra);
+console.log("A resposta é " + palavra); // coloquei esse console.log para ajudar na correção da prova :)
 window.onload = function(){
     start();
 }
@@ -158,7 +158,7 @@ function input(e) {
     
     if (!gameOver && row == tentativas) {
         gameOver = true;
-        document.getElementById("mensagem").innerText ="Você perdeu! \n A palavra correta é: " + palavra;
+        document.getElementById("mensagem").innerText ="Você perdeu! \n A palavra correta é: " + palavra + "!";
     }
 }
 
@@ -173,13 +173,13 @@ function atualizar() {
     }
 
     tentativa = tentativa.toLowerCase();
-    //console.log(tentativa);
+    console.log(tentativa);
     if(tentativa.length < tamanho) {
         document.getElementById("mensagem").innerText = "Por favor insira uma palavra com cinco letras! \n Esta palavra contém " + tentativa.length + " letra(s).";
         return;
     }
     else if (!listaTentativa.includes(tentativa)) {
-        document.getElementById("mensagem").innerText = "Tente novamente";
+        document.getElementById("mensagem").innerText = "Tente novamente.";
         
     }
     
@@ -197,7 +197,7 @@ function atualizar() {
         }
     }
 
-    //console.log(contadorLetra);
+    console.log(contadorLetra);
 
     for (let c = 0; c < tamanho; c++) {
         let celulaAtual = document.getElementById(row.toString() + '-' + c.toString());
@@ -216,12 +216,12 @@ function atualizar() {
 
         if (certo == tamanho) {
             gameOver = true;
-            document.getElementById("mensagem").innerText = "Parabéns você ganhou";
+            document.getElementById("mensagem").innerText = "Parabéns você ganhou!";
 
         }
     }
 
-    //console.log(contadorLetra);
+    console.log(contadorLetra);
     for (let c = 0; c < tamanho; c++) {
         let celulaAtual = document.getElementById(row.toString() + '-' + c.toString());
         let letra = celulaAtual.innerText;
