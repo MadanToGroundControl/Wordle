@@ -67,7 +67,7 @@ var listaTentativa = []
 listaTentativa = listaTentativa.concat(listaPalavra);
 
 var palavra = listaPalavra[Math.floor(Math.random()*listaPalavra.length)].toUpperCase();
-console.log("A resposta é " + palavra); // coloquei esse console.log para ajudar na correção da prova :)
+//console.log("A resposta é " + palavra);
 window.onload = function(){
     start();
 }
@@ -173,7 +173,7 @@ function atualizar() {
     }
 
     tentativa = tentativa.toLowerCase();
-    console.log(tentativa);
+    //console.log(tentativa);
     if(tentativa.length < tamanho) {
         document.getElementById("mensagem").innerText = "Por favor insira uma palavra com cinco letras! \n Esta palavra contém " + tentativa.length + " letra(s).";
         return;
@@ -197,7 +197,7 @@ function atualizar() {
         }
     }
 
-    console.log(contadorLetra);
+    //console.log(contadorLetra);
 
     for (let c = 0; c < tamanho; c++) {
         let celulaAtual = document.getElementById(row.toString() + '-' + c.toString());
@@ -221,7 +221,7 @@ function atualizar() {
         }
     }
 
-    console.log(contadorLetra);
+    //console.log(contadorLetra);
     for (let c = 0; c < tamanho; c++) {
         let celulaAtual = document.getElementById(row.toString() + '-' + c.toString());
         let letra = celulaAtual.innerText;
