@@ -102,6 +102,12 @@ p {
 span {
     border-radius: 10px;
 }
+@media screen and (max-width: 600px) {
+    .keyboard-row {
+        flex-wrap: nowrap;
+        width: 80%;
+    }
+}
 @keyframes animacao {
     10%, 90% {
       transform: translate3d(-1px, 0, 0);
